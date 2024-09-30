@@ -1,0 +1,82 @@
+/* styles.css */
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do cabeçalho */
+header {
+    
+    background-color: #ADD8E6;
+    height: 150px;
+
+    
+}
+
+/* Estilos dos cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+/* Estilo do texto */
+h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Estilo do botão */
+.btn {
+    margin-top: 20px;
+    background-color: #ADD8E6;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #ADD8E6;
+}
+
+/* Adicionando um efeito de transição nos links */
+.nav-link {
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: red;
+}
+
+a {
+    color: black;
+    font-size: 18px;
+}
+
+nav {
+    
+    position: relative;
+    margin-top: 05px;
+    
+    
+}
+
+.medico {
+    height: 294px;
+}
