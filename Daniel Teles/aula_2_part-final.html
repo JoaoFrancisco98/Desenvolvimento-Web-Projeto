@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista e Tabela</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: aquamarine;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lista de Clientes</h2>
+    <ul>
+        <li>Nome: Maria Silva - E-mail: maria@example.com - Telefone: (21) 1234-5678</li>
+        <li>Nome: João Souza - E-mail: joao@example.com - Telefone: (21) 8765-4321</li>
+        <li>Nome: Ana Oliveira - E-mail: ana@example.com - Telefone: (21) 1122-3344</li>
+    </ul>
+
+    <h2>Tabela de Veículos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Cor</th>
+                <th>Ano</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ford</td>
+                <td>Preto</td>
+                <td>2021</td>
+                <td>R$ 75.000</td>
+            </tr>
+            <tr>
+                <td>Chevrolet</td>
+                <td>Branco</td>
+                <td>2020</td>
+                <td>R$ 65.000</td>
+            </tr>
+            <tr>
+                <td>Fiat</td>
+                <td>Vermelho</td>
+                <td>2019</td>
+                <td>R$ 55.000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Tabela de veículos disponíveis</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
