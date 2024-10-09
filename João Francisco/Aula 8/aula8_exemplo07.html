@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Aula 8 - Exemplo 7</title>
+</head>
+<body>
+    <div>
+        <form onsubmit="return false;">
+            <input id="nome" name="nome" type="text" placeholder="Digite o nome da criança..." class="campo"
+            onkeypress="return ApenasLetras(event);"/>
+            <button type="submit" id="botao">Gravar</button>
+        </form>
+    </div>
+    <script>
+        function ApenasLetras(event) {
+            try {
+                var codChar = event.keyCode ? event.keyCode : event.which;
+                if ((codChar > 64 && codChar < 91) || (codChar > 96 && codChar < 123)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (err) {
+                window.alert(err.message);
+                return true;
+        }
+    </script>
+</body>
+</html>
