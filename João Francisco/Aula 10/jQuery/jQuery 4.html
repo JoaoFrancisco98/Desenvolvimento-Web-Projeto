@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+    <head>
+        <title>Usando jQuery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <p id="titulo">Teste 1</p>
+        <p class="cor">Teste 2</p>
+        <p>Teste 3</p>
+        <div class="cor">
+            Teste 1
+        </div>
+        <script>
+            $(document).ready(function(){
+                    $(".cor").attr("style", "background-color:blue; color:white");
+                });
+        </script>
+    </body>
+</html>
