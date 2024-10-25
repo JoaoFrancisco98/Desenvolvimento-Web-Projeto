@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <script>
+        function cadastrar(){
+            var notas=new Array();
+            var qtd = window.prompt('Quantas notas?');
+            for(i=0; i<qtd; i++){
+                var n = window.prompt('Digite a nota:');
+                notas.push(n);
+            }
+            document.getElementById('p1').innerHTML += notas;
+            document.getElementById('p2').innerHTML += notas.length;
+        }
+    </script>
+</head>
+<body>
+    <h1>Notas dos alunos</h1>
+    <button onclick="cadastrar();">Cadastrar</button>
+    <p id="p1">Notas: </p>
+    <p id="p2">Quantidade de notas: </p>
+</body>
+</html>

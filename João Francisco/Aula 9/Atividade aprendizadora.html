@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Nomes</title>
+</head>
+<body>
+    <h1>Gerenciador de Nomes</h1>
+    <input type="text" id="nomeInput" placeholder="Digite um nome">
+    <button onclick="adicionarNome()">Adicionar Nome</button>
+    <button onclick="ordenarNomes()">Ordenar Lista</button>
+    <button onclick="pesquisarNome()">Pesquisar Nome</button>
+
+    <h2>Lista de Nomes</h2>
+    <ul id="listaNomes"></ul>
+
+    <p id="resultado"></p>
+
+    <script>
+        let nomes = [];
+
+        function adicionarNome() {
+            const nomeInput = document.getElementById('nomeInput');
+            const nome = nomeInput.value.trim();
+            if (nome) {
+                nomes.push(nome);
+                nomeInput.value = '';
+                atualizarLista();
+            }
+        }
+
+        function atualizarLista() {
+            const lista = document.getElementById('listaNomes');
+            lista.innerHTML = '';
+            nomes.forEach(nome => {
+                const li = document.createElement('li');
+                li.textContent = nome;
+                lista.appendChild(li);
+            });
+        }
+
+        function ordenarNomes() {
+            nomes.sort();
+            atualizarLista();
+        }
+
+        function pesquisarNome() {
+            const nomeInput = document.getElementById('nomeInput');
+            const nomeProcurado = nomeInput.value.trim();
+            const resultado = document.getElementById('resultado');
+
+            if (nomeProcurado) {
+                const encontrado = pesquisaBinaria(nomes, nomeProcurado);
+                resultado.textContent = encontrado ? `O nome '${nomeProcurado}' está na lista.` : `O nome '${nomeProcurado}' não está na lista.`;
+            }
+        }
+
+        function pesquisaBinaria(nomes, nomeProcurado) {
+            let baixo = 0;
+            let alto = nomes.length - 1;
+
+            while (baixo <= alto) {
+                const meio = Math.floor((baixo + alto) / 2);
+                if (nomes[meio] === nomeProcurado) {
+                    return true;
+                } else if (nomes[meio] < nomeProcurado) {
+                    baixo = meio + 1;
+                } else {
+                    alto = meio - 1;
+                }
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
