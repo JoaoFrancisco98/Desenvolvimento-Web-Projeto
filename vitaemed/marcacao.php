@@ -7,6 +7,15 @@ if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.php');
     exit();
 }
+if (isset($_SESSION['mensagem_erro'])) {
+    echo '<div class="alert alert-danger text-center">' . $_SESSION['mensagem_erro'] . '</div>';
+    unset($_SESSION['mensagem_erro']);
+}
+
+if (isset($_SESSION['mensagem_sucesso'])) {
+    echo '<div class="alert alert-success text-center">' . $_SESSION['mensagem_sucesso'] . '</div>';
+    unset($_SESSION['mensagem_sucesso']);
+}
 
 // Conexão com o banco de dados
 $host = 'localhost';

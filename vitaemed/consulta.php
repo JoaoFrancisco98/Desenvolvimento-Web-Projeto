@@ -1,10 +1,14 @@
 <?php
 session_start();
-// Verifica se o usuário está logado
+
 if (!isset($_SESSION['usuario_id'])) {
-    $_SESSION['mensagem_erro'] = 'Você precisa estar logado para acessar esta página!';
     header('Location: login.php');
     exit();
+}
+
+if (isset($_SESSION['mensagem_sucesso'])) {
+    echo '<div class="alert alert-success text-center">' . $_SESSION['mensagem_sucesso'] . '</div>';
+    unset($_SESSION['mensagem_sucesso']); // Remove a mensagem após exibir
 }
 
 // Conexão com o banco de dados
