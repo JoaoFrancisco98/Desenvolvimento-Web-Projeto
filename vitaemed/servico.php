@@ -1,3 +1,14 @@
+<?php
+session_start(); // Inicia a sessão
+
+// Verifica se o usuário está logado
+if (isset($_SESSION['usuario_id'])) {
+    // O usuário está logado, exiba o conteúdo específico para ele
+    $usuario_nome = $_SESSION['usuario_nome']; // Exemplo de nome armazenado na sessão
+} else {
+    // O usuário não está logado, exiba conteúdo para visitantes não autenticados
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -27,6 +38,8 @@
                     <li class="nav-item"><a class="nav-link" href="quemsomos.php">Quem somos</a></li>
                     <li class="nav-item"><a class="nav-link" href="contato.php">Contato</a></li>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">Acesso</a></li>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -40,37 +53,9 @@
                         <div class="card-body text-center">
                             <img src="./img/servicos.png" class="img-fluid servico" alt="servico">
                             <h3>Clínica médica</h3>
-                            <p>É a área da medicina que trata de pacientes adultos, atuando na prevenção de doenças e na promoção da saúde.</p>
-                            <button class="showModalBtn btn">Agendar</button>
+                            <p>É a área da medicina que trata de pacientes adultos,atuando na prevenção de doenças e na promoção da saúde.</p>
+                            <a href="marcacao.php" class="btn btn-custom">Agendar</a>
 
-                            <div id="myModal" class="modal">
-                                <div class="modal-content">
-                                    <span class="close">&times;</span>
-                                    
-                                    <h4><img src="./img/zap.png" class="img-fluid zap">&nbsp; Faça pelo Whatsapp</h4>
-                                    <p>Por Favor, cadastre-se para fazer o agendamento.
-                                        Teremos todo o prazer em ajudar!</p>
-                                    <form id="myForm">
-                                        <div class="form-group">
-                                            <label for="name">Nome:</label>
-                                            <input type="text" id="name" class="form-control" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">E-mail:</label>
-                                            <input type="email" id="email" class="form-control" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="phone">Telefone:</label>
-                                            <input type="tel" id="phone" class="form-control" pattern="\d{10,11}" placeholder="Somente números" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="cpf">CPF:</label>
-                                            <input type="text" id="cpf" class="form-control" pattern="\d{11}" placeholder="Somente números, 11 dígitos" required>
-                                        </div>
-                                        <button type="submit" class="btn">Enviar</button>
-                                    </form>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -81,7 +66,7 @@
                             <img src="./img/coracao.png" class="img-fluid servico" alt="servico">
                             <h3>Cardiologia</h3>
                             <p>O médico cardiologista diagnostica e trata doenças cardíacas e do sistema circulatório.</p>
-                            <button class="showModalBtn btn">Agendar</button>
+                            <a href="marcacao.php" class="btn btn-custom">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -91,7 +76,7 @@
                             <img src="./img/osso.png" class="img-fluid servico" alt="servico">
                             <h3>Fisioterapia</h3>
                             <p>Diagnostica, previne e recupera pacientes com distúrbios cinéticos funcionais no corpo humano. </p>
-                            <button class="showModalBtn btn">Agendar</button>
+                            <a href="marcacao.php" class="btn btn-custom">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -101,7 +86,7 @@
                             <img src="./img/ginecologia.png"class="img-fluid servico" alt="servico">
                             <h3>Ginecologia</h3>
                             <p>É a especialidade clínico-cirúrgica responsável pelo cuidado com a saúde da mulher.</p>
-                            <button class="showModalBtn btn">Agendar</button>
+                            <a href="marcacao.php" class="btn btn-custom">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -111,7 +96,7 @@
                             <img src="./img/nutricionista.png" class="img-fluid servico" alt="servico">
                             <h3>Nutricionista</h3>
                             <p>É o profissional da área da saúde capacitado a atuar visando a segurança alimentar e a atenção dietética.</p>
-                            <button class="showModalBtn btn">Agendar</button>
+                            <a href="marcacao.php" class="btn btn-custom">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -121,7 +106,7 @@
                             <img src="./img/psi.png" class="img-fluid servico" alt="servico">
                             <h3>Psicologia</h3>
                             <p>É o estudo do comportamento e funções mentais. O psicólogo é o profissional que atua estudando a mente humana.</p>
-                            <button class="showModalBtn btn">Agendar</button>
+                            <a href="marcacao.php" class="btn btn-custom">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -131,7 +116,7 @@
                             <img src="./img/urologia.png" class="img-fluid servico" alt="servico">
                             <h3>Urologista</h3>
                             <p>Médico especialista no tratamento de doenças que afetam o sistema urinário e reprodutor masculino.</p>
-                            <button class="showModalBtn btn">Agendar</button>
+                            <a href="marcacao.php" class="btn btn-custom">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -141,7 +126,7 @@
                             <img src="./img/oftalmologia.png" class="img-fluid servico" alt="servico">
                             <h3>Oftalmologia</h3>
                             <p>O médico oftalmologista é o especialista que acompanha as doenças relacionadas com os olhos e com a visão.</p>
-                                <button class="showModalBtn btn">Agendar</button>
+                            <a href="marcacao.php" class="btn btn-custom">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -151,7 +136,7 @@
                             <img src="./img/dermatologia.png" class="img-fluid servico" alt="servico">
                             <h3>Dermatologia</h3>
                             <p>Especialidade médica que previne e trata doenças e afecções relacionadas à pele, mucosas, cabelo e unha.</p>
-                            <button class="showModalBtn btn">Agendar</button>
+                            <a href="marcacao.php" class="btn btn-custom">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -165,43 +150,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Referências aos elementos
-        const modal = document.getElementById('myModal');
-        const closeModalBtn = document.querySelector('.close');
-        const form = document.getElementById('myForm');
-    
-        // Mostra o modal quando qualquer botão é clicado
-        document.querySelectorAll('.showModalBtn').forEach(button => {
-            button.onclick = function() {
-                modal.style.display = 'block';
-            };
-        });
-    
-        // Fecha o modal quando o botão "x" é clicado
-        closeModalBtn.onclick = function() {
-            modal.style.display = 'none';
-        };
-    
-        // Fecha o modal quando o usuário clica fora dele
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        };
-    
-        // Manipulador do evento de envio do formulário
-        form.onsubmit = function(event) {
-            event.preventDefault(); // Evita o envio padrão do formulário
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const cpf = document.getElementById('cpf').value;
-            
-            alert(`Nome: ${name}\nE-mail: ${email}\nNúmero: ${phone}\nCPF: ${cpf}`); // Alerta com os dados inseridos
-            modal.style.display = 'none'; // Fecha o modal
-            form.reset(); // Reseta o formulário
-        };
-    </script>
 </body>
 </html>

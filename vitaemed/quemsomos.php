@@ -1,3 +1,14 @@
+<?php
+session_start(); // Inicia a sessão
+
+// Verifica se o usuário está logado
+if (isset($_SESSION['usuario_id'])) {
+    // O usuário está logado, exiba o conteúdo específico para ele
+    $usuario_nome = $_SESSION['usuario_nome']; // Exemplo de nome armazenado na sessão
+} else {
+    // O usuário não está logado, exiba conteúdo para visitantes não autenticados
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -26,6 +37,8 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="quemsomos.php">Quem somos</a></li>
                     <li class="nav-item"><a class="nav-link" href="contato.php">Contato</a></li>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">Acesso</a></li>
                     </li>
                 </ul>
             </nav>
@@ -60,7 +73,7 @@
             <img src="./img/julia.jpg" class="foto img-fluid" alt="foto">
             <p class="text-center">Matricula:202409123731</p>        
             <p class="text-center">Daniel Teles dos Santos</p>
-            <img src="./img/daniel.jpg" class="foto img-fluid" alt="foto">
+            <img src="./img/daniel.jpeg" class="foto img-fluid" alt="foto">
             <p class="text-center">Matricula:202403262819</p>   
         </div>
         </section>
