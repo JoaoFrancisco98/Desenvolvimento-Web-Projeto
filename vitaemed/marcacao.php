@@ -7,15 +7,6 @@ if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.php');
     exit();
 }
-if (isset($_SESSION['mensagem_erro'])) {
-    echo '<div class="alert alert-danger text-center">' . $_SESSION['mensagem_erro'] . '</div>';
-    unset($_SESSION['mensagem_erro']);
-}
-
-if (isset($_SESSION['mensagem_sucesso'])) {
-    echo '<div class="alert alert-success text-center">' . $_SESSION['mensagem_sucesso'] . '</div>';
-    unset($_SESSION['mensagem_sucesso']);
-}
 
 // Conexão com o banco de dados
 $host = 'localhost';
@@ -138,8 +129,8 @@ if (isset($_SESSION['mensagem_erro'])) {
     </div>
 
     <div class="form-group">
-        <label for="data_agendamento">Data</label>
-        <input type="date" class="form-control" id="data_agendamento" name="data_agendamento" required>
+    <label for="data_agendamento">Data</label>
+    <input type="date" class="form-control" id="data_agendamento" name="data_agendamento" min="<?= date('Y-m-d'); ?>" required>
     </div>
 
     <div class="form-group">

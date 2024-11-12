@@ -48,11 +48,11 @@
             </div>
             <div class="form-group">
                 <label for="email">E-mail</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="@email" required>
             </div>
             <div class="form-group">
                 <label for="telefone">Telefone</label>
-                <input type="tel" class="form-control" id="telefone" name="telefone" pattern="\d{10,11}" placeholder="Somente números" required>
+                <input type="tel" class="form-control" id="telefone" name="telefone" pattern="\d{10,11}" placeholder="ex: 11912345678" maxlength="11" required>
             </div>
             <div class="form-group">
                 <label for="data_exame">Data de Nascimento</label>
@@ -65,6 +65,11 @@
             <button type="submit" class="btn btn-block" id="btn-criarconta">Criar Conta</button>
         </form>
     </section>
+    <script>
+    document.getElementById("telefone").addEventListener("input", function (e) {
+        // Remove qualquer caractere não numérico
+        e.target.value = e.target.value.replace(/\D/g, "");
+    });
 </main>
 
 <footer class="text-white text-center py-3 mt-5" style="background-color: #343a40;">

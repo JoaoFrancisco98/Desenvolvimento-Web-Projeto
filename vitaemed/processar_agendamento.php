@@ -58,7 +58,7 @@ try {
             $_SESSION['mensagem_erro'] = 'Você deve escolher uma especialidade ou um exame!';
         }
     
-        header('Location: marcacao.php'); // Redireciona de volta para a página de agendamento
+        header('Location: consulta.php'); // Redireciona de volta para a página de agendamento
         exit();
     }
     
